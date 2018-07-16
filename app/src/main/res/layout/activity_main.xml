@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/app_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -16,13 +16,16 @@
         android:textColor="@android:color/white"
         android:text="@string/game_title" />
 
-    <ImageView
-        android:id="@+id/icon"
+    <ImageButton
+        android:id="@+id/app_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/app_title"
+        android:layout_above="@id/adView"
+        android:layout_marginBottom="2sp"
         android:background="@drawable/ic_launcher" />
 
-    <!-- view for AdMob Banner Ad -->X
+    <!-- view for AdMob Banner Ad -->
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
