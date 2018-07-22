@@ -2,28 +2,20 @@ package jp.co.ultragenma.codememory;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import android.os.Bundle;
-import android.print.PrinterId;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    // Remove the below line after defining your own ad unit ID.
-    private static final String TOAST_TEXT = "Test ads are being shown. "
-            + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
-
+    private Game mGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
 
         setScreenMain();    // set main activity
 
@@ -33,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
                 .setRequestAgent("android_studio:ad_template").build();
         adView.loadAd(adRequest);
 
-        // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-//        Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
+        mGame = new Game(this);
+
     }
 
 
@@ -54,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             setScreenGameChoice();      // set game choice screen
-            return true;gi
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -75,10 +67,20 @@ public class MainActivity extends AppCompatActivity {
     private void setScreenGameChoice() {
         setContentView(R.layout.layout_game_choice);
 
-        Button btn_all = findViewById(R.id.tokyo_all);
-        btn_all.setOnClickListener(new View.OnClickListener() {
+        Button btn_company_mode = findViewById(R.id.mode_company);
+        btn_company_mode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mGame.setGameMode(Game.ANSWER_COMPANY_NAME);
+                setScreenGame();
+            }
+        });
+
+        Button btn_code_mode = findViewById(R.id.mode_code);
+        btn_code_mode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mGame.setGameMode(Game.ANSWER_CODE);
                 setScreenGame();
             }
         });
@@ -87,13 +89,22 @@ public class MainActivity extends AppCompatActivity {
     private void setScreenGame() {
         setContentView(R.layout.layout_game);
 
-        final TextView answer = findViewById(R.id.field_answer);
+        final Button question = findViewById(R.id.button_question);
+        question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String questionData = mGame.getQuestion();
+                question.setText(questionData);
+            }
+        });
+
+
+        final Button answer = findViewById(R.id.button_answer);
         answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                answer.setVisibility(View.INVISIBLE);
-                // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
-                Toast.makeText(view.getContext(), TOAST_TEXT, Toast.LENGTH_LONG).show();
+                String answerData = mGame.getAnswer();
+                answer.setText(answerData);
             }
         });
     }

@@ -7,7 +7,36 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/mode_company"
+            android:text="@string/geme_mode_company"
+            android:textSize="36sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/mode_code"
+            android:text="@string/geme_mode_code"
+            android:textSize="36sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/tokyo_all"
@@ -20,7 +49,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/tokyo_1"
@@ -33,7 +63,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/tokyo_2"
@@ -46,7 +77,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/tokyo_jq"
@@ -59,7 +91,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
+        android:gravity="center_horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/tokyo_m"
@@ -72,7 +105,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal" >
+        android:gravity="center_horizontal">
 
         <!-- view for AdMob Banner Ad -->
         <com.google.android.gms.ads.AdView
