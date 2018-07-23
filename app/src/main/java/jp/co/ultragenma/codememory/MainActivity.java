@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        final Button answer = findViewById(R.id.button_answer);
+        final Button answer = findViewById(R.id.button_answer1);
         answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
