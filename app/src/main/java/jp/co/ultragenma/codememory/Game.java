@@ -51,11 +51,11 @@ public class Game {
      * getRandomData()
      * @return Random data
      */
-    public String[] getRandomData() {
+    private String[] getRandomData() {
         Random num = new Random();
         int i = num.nextInt(mMarketData.getLength());
 
         return mMarketData.getData(i);
     }
-
+    
 }

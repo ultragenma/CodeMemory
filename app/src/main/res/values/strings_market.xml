@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="button_tokyo_all">全銘柄</string>
+    <string name="button_tokyo_1">東一部</string>
+    <string name="button_tokyo_2">東二部</string>
+    <string name="button_tokyo_jq">JASDAQ</string>
+    <string name="button_tokyo_m">マザーズ</string>
+    <string name="button_tokyo_pro">TOKYO PRO Market</string>
+</resources>

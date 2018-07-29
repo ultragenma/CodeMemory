@@ -11,15 +11,14 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="50sp"
-        android:layout_marginBottom="20sp"
-        android:background="@android:color/holo_green_dark">
+        android:layout_marginBottom="20sp">
 
         <Button
             android:id="@+id/button_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/question"
-            android:textSize="42sp"/>
+            android:textSize="42sp"
+            android:background="@android:color/holo_green_dark"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -32,7 +31,6 @@
             android:id="@+id/button_answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/answer"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
             android:background="@android:color/holo_green_light"/>
@@ -41,7 +39,6 @@
             android:id="@+id/button_answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/answer"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
             android:background="@android:color/holo_green_light"/>
@@ -50,7 +47,6 @@
             android:id="@+id/button_answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/answer"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
             android:background="@android:color/holo_green_light"/>
@@ -59,25 +55,32 @@
             android:id="@+id/button_answer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/answer"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
             android:background="@android:color/holo_green_light"/>
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center_horizontal"
         android:layout_marginTop="20sp">
+
+        <TextView
+            android:id="@+id/correct_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_of_correct_answer"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/number_of_correct_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/num_of_correct_answer"
+            android:text="10"
             android:textSize="20sp"/>
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
