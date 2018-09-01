@@ -2,8 +2,6 @@ package jp.co.ultragenma.codememory;
 
 import android.content.Context;
 
-import java.util.Random;
-
 public class Game {
     private MarketData mMarketData;
     private int mGameMode;
@@ -11,17 +9,29 @@ public class Game {
     static public int ANSWER_CODE = 1;
     private String[] mTest;
 
+    /**
+     * Constructor
+     * @return none
+     */
     public Game(Context context) {
         mMarketData = new MarketData(context);
     }
 
+    /**
+     * setGameMode()
+     * @return none
+     */
     public void setGameMode(int mode) {
         mGameMode = mode;
     }
 
+    /**
+     * getQuestion()
+     * @return String
+     */
     public String getQuestion() {
         String question;
-        mTest = getRandomData();
+        mTest = mMarketData.getRandomData();
 
         if (mGameMode == ANSWER_COMPANY_NAME) {
             question = mTest[0];
@@ -34,6 +44,10 @@ public class Game {
         return question;
     }
 
+    /**
+     * getAnswer()
+     * @return String
+     */
     public String getAnswer() {
         String answer;
 
@@ -47,15 +61,5 @@ public class Game {
         return answer;
     }
 
-    /**
-     * getRandomData()
-     * @return Random data
-     */
-    private String[] getRandomData() {
-        Random num = new Random();
-        int i = num.nextInt(mMarketData.getLength());
 
-        return mMarketData.getData(i);
-    }
-    
 }

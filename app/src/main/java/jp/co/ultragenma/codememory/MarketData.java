@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class MarketData {
     private String[] mCodeList;
@@ -38,5 +39,16 @@ public class MarketData {
 
     public int getLength() {
         return mCodeList.length;
+    }
+
+    /**
+     * getRandomData()
+     * @return Random data
+     */
+    public String[] getRandomData() {
+        Random num = new Random();
+        int i = num.nextInt(getLength());
+
+        return getData(i);
     }
 }
