@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light">
+    android:background="@color/color5">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="42sp"
-            android:background="@android:color/holo_green_dark"/>
+            android:textColor="@color/color1"
+            android:background="@color/color2"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -33,7 +34,8 @@
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
-            android:background="@android:color/holo_green_light"/>
+            android:textColor="@color/color1"
+            android:background="@color/color3"/>
 
         <Button
             android:id="@+id/button_answer2"
@@ -41,7 +43,8 @@
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
-            android:background="@android:color/holo_green_light"/>
+            android:textColor="@color/color1"
+            android:background="@color/color3"/>
 
         <Button
             android:id="@+id/button_answer3"
@@ -49,7 +52,8 @@
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
-            android:background="@android:color/holo_green_light"/>
+            android:textColor="@color/color1"
+            android:background="@color/color3"/>
 
         <Button
             android:id="@+id/button_answer4"
@@ -57,7 +61,8 @@
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:layout_marginTop="5sp"
-            android:background="@android:color/holo_green_light"/>
+            android:textColor="@color/color1"
+            android:background="@color/color3"/>
     </LinearLayout>
 
     <LinearLayout
@@ -72,14 +77,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/num_of_correct_answer"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/color1"/>
 
         <TextView
             android:id="@+id/number_of_correct_answer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textColor="@color/color1"/>
     </LinearLayout>
 
     <RelativeLayout

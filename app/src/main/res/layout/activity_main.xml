@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
+    android:background="@color/color5"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="48sp"
-        android:textColor="@android:color/white"
-        android:text="@string/game_title" />
+        android:textColor="@color/color1"
+        android:text="@string/game_title"
+        android:paddingTop="10dp"/>
 
     <ImageButton
         android:id="@+id/app_icon"
@@ -22,8 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/app_title"
         android:layout_above="@id/adView"
-        android:layout_marginBottom="2sp"
-        android:background="@drawable/ic_launcher" />
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_launcher"
+        android:background="@color/color5"/>
 
     <!-- view for AdMob Banner Ad -->
     <com.google.android.gms.ads.AdView
@@ -32,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/white"
+        android:background="@color/color5"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
 
