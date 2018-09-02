@@ -4,6 +4,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,9 +27,22 @@ public class MainActivity extends AppCompatActivity {
         adView.loadAd(adRequest);
 
         mGame = new Game(this);
-
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_settings) {
             setScreenGameChoice();      // set game choice screen
+            return true;
+        } else if (id == R.id.page_about) {
+            setScreenAbout();           // set about screen
             return true;
         }
 
@@ -86,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void setScreenAbout() {
+        setContentView(R.layout.layout_about);
+    }
+
     private void setScreenGame() {
         setContentView(R.layout.layout_game);
 
@@ -98,13 +119,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        final Button answer = findViewById(R.id.button_answer1);
-        answer.setOnClickListener(new View.OnClickListener() {
+        final Button answer1 = findViewById(R.id.button_answer1);
+        answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String answerData = mGame.getAnswer();
-                answer.setText(answerData);
+                answer1.setText(answerData);
+            }
+        });
+
+        final Button answer2 = findViewById(R.id.button_answer2);
+        answer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String answerData = mGame.getAnswer();
+                answer2.setText(answerData);
+            }
+        });
+
+        final Button answer3 = findViewById(R.id.button_answer3);
+        answer3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String answerData = mGame.getAnswer();
+                answer3.setText(answerData);
+            }
+        });
+
+        final Button answer4 = findViewById(R.id.button_answer4);
+        answer4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String answerData = mGame.getAnswer();
+                answer4.setText(answerData);
             }
         });
     }

@@ -4,27 +4,34 @@ import android.content.Context;
 import android.content.res.Resources;
 
 import java.util.Arrays;
-import java.util.Random;
 
-public class MarketData {
-    private String[] mCodeList;
-    private String[] mCompanyList;
-    private String[] mMarketList;
+public final class MarketData {
     private String[][] mData;
+    private int mLength;
+    private static final MarketData instance = new MarketData();
 
-    public MarketData(Context context) {
+    private MarketData() {}
+
+    public static MarketData getInstance() {
+        return instance;
+    }
+
+    public void init(Context context) {
         Resources res = context.getResources();
         mData = new String[3][];
 
         if (res != null) {
-            mCodeList = res.getStringArray(R.array.array_code);
-            mCompanyList = res.getStringArray(R.array.array_company);
-            mMarketList = res.getStringArray(R.array.array_market);
+            String[] codeList = res.getStringArray(R.array.array_code);
+            String[] companyList = res.getStringArray(R.array.array_company);
+            String[] marketList = res.getStringArray(R.array.array_market);
 
-            mData[0] = Arrays.copyOf(mCodeList, mCodeList.length);
-            mData[1] = Arrays.copyOf(mCompanyList, mCompanyList.length);
-            mData[2] = Arrays.copyOf(mMarketList, mMarketList.length);
+            mData[0] = Arrays.copyOf(codeList, codeList.length);
+            mData[1] = Arrays.copyOf(companyList, companyList.length);
+            mData[2] = Arrays.copyOf(marketList, marketList.length);
+
+            mLength = codeList.length;
         }
+
     }
 
     public String[] getData(int index) {
@@ -37,18 +44,33 @@ public class MarketData {
         return data;
     }
 
+    public String getCode(int i) {
+        return mData[0][i];
+    }
+
+    public String getCompany(int i) {
+        return mData[1][i];
+    }
+
+    public String getMarket(int i) {
+        return mData[2][i];
+    }
+
+    public String[] getCodeList() {
+        return mData[0];
+    }
+
+    public String[] getCompanyList() {
+        return mData[1];
+    }
+
+    public String[] getmMarketList() {
+        return mData[2];
+    }
+
     public int getLength() {
-        return mCodeList.length;
+        return mLength;
     }
 
-    /**
-     * getRandomData()
-     * @return Random data
-     */
-    public String[] getRandomData() {
-        Random num = new Random();
-        int i = num.nextInt(getLength());
 
-        return getData(i);
-    }
 }
